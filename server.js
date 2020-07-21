@@ -9,7 +9,7 @@ async function main() {
 			port: 8080
 		})
 
-		server.use( '/services/m/', mocks.server( server.Router()) )
+		server.use( '/services/m/', mocks.server( server.Router(), false, true ) )
 
     const result = await server.start()
     console.info( result )
