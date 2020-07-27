@@ -5,7 +5,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "ronin-mocks": "^0.1.4",
+    "ronin-mocks": "^0.1.5",
     "ronin-server": "^0.1.1"
   }
 }
