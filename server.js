@@ -6,10 +6,10 @@ async function main() {
 	try {
 
     const server = ronin.server({
-			port: process.env.PORT || 8080
+			port: process.env.PORT || 80
 		})
 
-		server.use( '/services/m/', mocks.server( server.Router(), false, true ) )
+		server.use( '/services/', mocks.server( server.Router(), false, true ) )
 
     const result = await server.start()
     console.info( result )
@@ -19,13 +19,5 @@ async function main() {
 	}
 
 }
-
-function shutdown( signal ) {
-	console.info( `[${signal}] shutting down...` )
-	process.exit()
-}
-
-process.on( 'SIGINT', () => shutdown( 'SIGINT' ) )
-process.on( 'SIGTERM', () => shutdown( 'SIGTERM' ) )
 
 main()
